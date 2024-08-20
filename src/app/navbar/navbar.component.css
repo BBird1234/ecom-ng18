@@ -1,56 +1,17 @@
 .nav{
-    background: #798c8c;
+    background: #0d0d0d;
  
 }
 
 .btn{
-    background-color: #D0D9D4;
+    background-color: #f2e2c4;
 }
 
 .navbar-brand{
 font-family: 'Montserrat', sans-serif;
-color: aliceblue;
+color: #a67a46;
 font-size: 1.5rem;}
 
-/* .lists{
-  
-    height:60px;
-    text-align: center;
-    background-color: #798c8c;
-    margin-bottom: 5px;
+.nav-link{
+    color: #a67a46;
 }
-
-.mp{
-    width:120px;
-    position: absolute;
-    border-right: solid;
-   border-left: solid;
-   left: 25%;
-   }
-.fashion{
-    width:100px;
-    position: absolute;
-    border-right: solid;
-    left: 33%;
-}
-.electronics{
-    width:100px;
-    position: absolute;
-    border-right: solid;
-    left: 41%;
-}
-
-.furniture{
-    width:100px;
-    position: absolute;
-    border-right: solid;
-    left: 49%;
-}
-
-.cars{
-   
-    width:100px;
-    position: absolute;
-    border-right: solid;
-    left: 57%;
-} */

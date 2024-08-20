@@ -1,28 +1,97 @@
-    <div class="content">
-      <app-navbar (searchTextChanged)="onSearchTextEntered($event)"></app-navbar>
-      <div class="background"></div>
-      <div class="background-texture"></div>
-      <section class="carousel">
-       <div class="carousel__container">
-        <ng-container *ngFor="let a of getproduct "> 
-          <div class="carousel-item" *ngIf="searchText==='' || a.pname.toLowerCase().includes(searchText)">
-            
-               
-              <img class="carousel-item__img" [src]="a.image" >
-               
-              <div class="carousel-item__details">
-                <div class="controls">
-                  <span class="detailsbutton" (click)="goToProduct(a.pid)">🛒</span>
-                 
-                </div>
-                <h5 class="carousel-item__details--title">{{a.pname}}</h5>
-                <h6 class="carousel-item__details--subtitle">GH₵: {{a.pcoin}}.00, {{a.pcity}}</h6>
-              </div>
-            </div> 
-         
-          </ng-container> </div>
-          
-   </section> </div>
-  
+<app-navbar (searchTextChanged)="onSearchTextEntered($event)"></app-navbar>
 
- 
+<section class="carousel">
+  <div class="carousel__container">
+    <!-- Static Items -->
+    <div class="carousel-item" *ngIf="searchText === '' || 'iPhone 15 Pro Max'.toLowerCase().includes(searchText)">
+      <img class="carousel-item__img" src="assets/iPhone-15-Pro-Max.jpg" alt="Admin">
+      <div class="carousel-item__details">
+        <div class="controls">
+          <span class="detailsbutton" (click)="goToProduct('static-id')">🛒</span>
+        </div>
+        <h5 class="carousel-item__details--title">iPhone 15 Pro Max</h5>
+        <h6 class="carousel-item__details--subtitle">GH₵: 16,000.00, Accra</h6>
+      </div>
+    </div>
+
+    <div class="carousel-item" *ngIf="searchText === '' || 'iPhone 15 Pro Max'.toLowerCase().includes(searchText)">
+      <img class="carousel-item__img" src="assets/bini.jpg" alt="Admin">
+      <div class="carousel-item__details">
+        <div class="controls">
+          <span class="detailsbutton" (click)="goToProduct('static-id')">🛒</span>
+        </div>
+        <h5 class="carousel-item__details--title">Bini Hat</h5>
+        <h6 class="carousel-item__details--subtitle">GH₵: 60.00, Accra</h6>
+      </div>
+    </div>
+
+    <div class="carousel-item" *ngIf="searchText === '' || 'iPhone 15 Pro Max'.toLowerCase().includes(searchText)">
+      <img class="carousel-item__img" src="assets/bike.jpg" alt="Admin">
+      <div class="carousel-item__details">
+        <div class="controls">
+          <span class="detailsbutton" (click)="goToProduct('static-id')">🛒</span>
+        </div>
+        <h5 class="carousel-item__details--title">Motorbike</h5>
+        <h6 class="carousel-item__details--subtitle">GH₵: 16,000.00, Accra</h6>
+      </div>
+    </div>
+
+    <div class="carousel-item" *ngIf="searchText === '' || 'iPhone 15 Pro Max'.toLowerCase().includes(searchText)">
+      <img class="carousel-item__img" src="assets/chair.jpg" alt="Admin">
+      <div class="carousel-item__details">
+        <div class="controls">
+          <span class="detailsbutton" (click)="goToProduct('static-id')">🛒</span>
+        </div>
+        <h5 class="carousel-item__details--title">Tensegrity Chair</h5>
+        <h6 class="carousel-item__details--subtitle">GH₵: 3,000.00, Ho</h6>
+      </div>
+    </div>
+
+    <div class="carousel-item" *ngIf="searchText === '' || 'iPhone 15 Pro Max'.toLowerCase().includes(searchText)">
+      <img class="carousel-item__img" src="assets/car.jpg" alt="Admin">
+      <div class="carousel-item__details">
+        <div class="controls">
+          <span class="detailsbutton" (click)="goToProduct('static-id')">🛒</span>
+        </div>
+        <h5 class="carousel-item__details--title">Mercedes Benz Coupe</h5>
+        <h6 class="carousel-item__details--subtitle">GH₵: 3,500,000.00, Kumasi</h6>
+      </div>
+    </div>
+
+    <div class="carousel-item" *ngIf="searchText === '' || 'iPhone 15 Pro Max'.toLowerCase().includes(searchText)">
+      <img class="carousel-item__img" src="assets/lappy.jpg" alt="Admin">
+      <div class="carousel-item__details">
+        <div class="controls">
+          <span class="detailsbutton" (click)="goToProduct('lappy')">🛒</span>
+        </div>
+        <h5 class="carousel-item__details--title">Macbook Air</h5>
+        <h6 class="carousel-item__details--subtitle">GH₵: 13,500.00, Accra</h6>
+      </div>
+    </div>
+
+    <div class="carousel-item" *ngIf="searchText === '' || 'iPhone 15 Pro Max'.toLowerCase().includes(searchText)">
+      <img class="carousel-item__img" src="assets/shoe.jpg" alt="Admin">
+      <div class="carousel-item__details">
+        <div class="controls">
+          <span class="detailsbutton" (click)="goToProduct('static-id')">🛒</span>
+        </div>
+        <h5 class="carousel-item__details--title">Nike Sneakers</h5>
+        <h6 class="carousel-item__details--subtitle">GH₵: 500.00, Accra</h6>
+      </div>
+    </div>
+
+    <!-- Dynamic Items from Database -->
+    <ng-container *ngFor="let a of getproduct">
+      <div class="carousel-item" *ngIf="searchText === '' || a.pname.toLowerCase().includes(searchText)">
+        <img class="carousel-item__img" [src]="a.image">
+        <div class="carousel-item__details">
+          <div class="controls">
+            <span class="detailsbutton" (click)="goToProduct(a.pid)">🛒</span>
+          </div>
+          <h5 class="carousel-item__details--title">{{a.pname}}</h5>
+          <h6 class="carousel-item__details--subtitle">GH₵: {{a.pcoin}}.00, {{a.pcity}}</h6>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>

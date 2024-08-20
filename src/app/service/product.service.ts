@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';  // Import Observable from rxjs
 })
 export class ProductService {
   baseUrl = "https://ecoms-k1f4.onrender.com";
+  
   // baseUrl = "http://localhost:8081";   
 
   constructor(private httpClient: HttpClient) { }
